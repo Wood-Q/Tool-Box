@@ -1,0 +1,13 @@
+.sidelink{
+    margin: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: rgb(220, 255, 227) ;
+    color: rgb(134, 133, 133);
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    cursor: pointer;
+    text-decoration: none; /* 移除下划线 */
+  color: inherit; /* 继承父元素的颜色，或设置你想要的颜色 */
+}
