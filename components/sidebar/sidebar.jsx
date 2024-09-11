@@ -12,7 +12,8 @@ function Sidebar() {
         </NavLink>
         <p className="slogan">木乔的工具小箱</p>
       </div>
-      <Sidelink target="/gitpage" />
+      <Sidelink target="/gitpage" content="Git命令查询"/>
+      <Sidelink target="/randomPorts" content="随机端口号"/>
     </div>
   );
 }

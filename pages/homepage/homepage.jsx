@@ -5,7 +5,7 @@ function Homepage() {
     return (
         <div className="content">
             <Block target="/gitpage"  content="Git查询"/>
-            <Block/>
+            <Block target="/randomPorts" content="随机端口号"/>
             <Block/>
             <Block/>
             <Block/>

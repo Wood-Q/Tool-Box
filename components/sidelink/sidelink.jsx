@@ -1,10 +1,10 @@
 import { NavLink } from "react-router-dom";
 import "./sidelink.css";
 
-function Sidelink({ target }) {
+function Sidelink({ target,content }) {
   return (
     <NavLink className="sidelink">
-      <p>Git命令查询</p>
+      <p>{ content}</p>
     </NavLink>
   );
 }
