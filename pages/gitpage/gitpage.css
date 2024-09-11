@@ -1,5 +1,21 @@
-.content{
+.contents{
     margin-left: 17%; /* 留出Sidebar的宽度 */
     margin-top: 10%; /* 留出Topbar的高度，20px padding + 60px */
     padding: 40px; /* 内容区域的内边距 */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* block.css */
+.contents pre {
+  background-color: #ffffff; /* 设置代码块背景为白色 */
+  padding: 30px;
+  border-radius: 5px;
+  overflow-x: auto; /* 防止代码块溢出 */
+}
+
+.contents code {
+  background-color: #f9f9f9; /* 设置代码内联背景为淡白色 */
+  color: #333; /* 设置字体颜色 */
 }
