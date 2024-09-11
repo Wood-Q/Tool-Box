@@ -15,6 +15,7 @@ function Sidebar() {
       <Sidelink target="/gitpage" content="Git命令查询"/>
       <Sidelink target="/randomPorts" content="随机端口号"/>
       <Sidelink target="/httpCode" content="HTTP状态码"/>
+      <Sidelink target="/UpLow" content="大小写转换"/>
     </div>
   );
 }

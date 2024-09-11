@@ -1,23 +1,23 @@
-import Block from "../../components/block/block"
-import "./homepage.css"
+import Block from "../../components/block/block";
+import "./homepage.css";
 
 function Homepage() {
-    return (
-        <div className="content">
-            <Block target="/gitpage"  content="Git查询"/>
-            <Block target="/randomPorts" content="随机端口号"/>
-            <Block target="/httpCode" content="http状态码"/>
-            <Block/>
-            <Block/>
-            <Block/>
-            <Block/>
-            <Block/>
-            <Block/>
-            <Block/>
-            <Block/>
-            <Block/>
-        </div>
-    )
+  return (
+    <div className="content">
+      <Block target="/gitpage" content="Git查询" />
+      <Block target="/randomPorts" content="随机端口号" />
+      <Block target="/httpCode" content="http状态码" />
+      <Block target="/UpLow" content="大小写转换" />
+      <Block content="" />
+      <Block content="" />
+      <Block content="" />
+      <Block content="" />
+      <Block content="" />
+      <Block content="" />
+      <Block content="" />
+      <Block content="" />
+    </div>
+  );
 }
 
-export default Homepage
+export default Homepage;

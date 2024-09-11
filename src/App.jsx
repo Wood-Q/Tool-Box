@@ -7,18 +7,20 @@ import Gitpage from "../pages/gitpage/gitpage";
 import RandomPortsPage from "../pages/portpage/randomPorts";
 import "./App.css"
 import HttpPage from "../pages/httppage/httpPage";
+import UpperLowerPage from "../pages/upperlowerPage/ulpage";
 
 function App() {
   return (
-    <div > 
+    <div>
       <Routers>
-        <Topbar/>
+        <Topbar />
         <Sidebar />
-        <Routes >
+        <Routes>
           <Route path="/" element={<Homepage />} />
           <Route path="/gitpage" element={<Gitpage />} />
           <Route path="/randomPorts" element={<RandomPortsPage />} />
           <Route path="/httpCode" element={<HttpPage />} />
+          <Route path="/UpLow" element={<UpperLowerPage />} />
         </Routes>
       </Routers>
     </div>

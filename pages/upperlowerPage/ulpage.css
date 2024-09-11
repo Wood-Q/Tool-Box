@@ -1,0 +1,16 @@
+.contents{
+    margin-left: 17%; /* 留出Sidebar的宽度 */
+    margin-top: 10%; /* 留出Topbar的高度，20px padding + 60px */
+    padding: 40px; /* 内容区域的内边距 */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.word {
+    padding: 8px;
+    border-radius: 2px;
+    font-size: 16px;
+    width: 30%; /* 设置搜索框宽度为 300px */
+}
