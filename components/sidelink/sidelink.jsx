@@ -3,8 +3,8 @@ import "./sidelink.css";
 
 function Sidelink({ target,content }) {
   return (
-    <NavLink className="sidelink">
-      <p>{ content}</p>
+    <NavLink className="sidelink" to={target}>
+      <p>{content}</p>
     </NavLink>
   );
 }
