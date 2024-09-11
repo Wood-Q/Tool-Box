@@ -1,8 +1,12 @@
-# React + Vite
+# 这是我用来练习react，react-router的小项目
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
-
-Currently, two official plugins are available:
-
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## 项目功能包括
+- [x] Git查询
+- [x] 随机端口号
+- [x] http状态码
+- [ ] 大小写转换：大写，小写，驼峰
+- [ ] linux命令备忘录
+- [ ] 进制转换:二进制，八进制，十六进制
+- [ ] 颜色选择器
+- [ ] 文本统计
+- [ ] 每日诗词
