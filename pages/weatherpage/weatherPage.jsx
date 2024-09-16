@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import "./weatherPage.css";
 
 function WeatherPage() {
@@ -34,6 +34,7 @@ function WeatherPage() {
             <h3>城市: {weather.location.name}</h3>
             <h3>温度: {weather.current.temperature}</h3>
             <h3>天气: {weather.current.weather_descriptions}</h3>
+            <img src={weather.current.weather_icons[0]} alt=""/>
             <h3>湿度: {weather.current.humidity}</h3>
         </div>
     );
