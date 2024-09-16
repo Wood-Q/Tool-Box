@@ -8,7 +8,7 @@ function Homepage() {
       <Block target="/randomPorts" content="随机端口号" />
       <Block target="/httpCode" content="http状态码" />
       <Block target="/UpLow" content="大小写转换" />
-      <Block content="" />
+      <Block target="/weather "content="天气查询" />
       <Block content="" />
       <Block content="" />
       <Block content="" />

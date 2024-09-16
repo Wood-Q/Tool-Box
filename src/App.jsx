@@ -8,6 +8,7 @@ import RandomPortsPage from "../pages/portpage/randomPorts";
 import "./App.css"
 import HttpPage from "../pages/httppage/httpPage";
 import UpperLowerPage from "../pages/upperlowerPage/ulpage";
+import WeatherPage from "../pages/weatherpage/weatherPage";
 
 function App() {
   return (
@@ -21,6 +22,7 @@ function App() {
           <Route path="/randomPorts" element={<RandomPortsPage />} />
           <Route path="/httpCode" element={<HttpPage />} />
           <Route path="/UpLow" element={<UpperLowerPage />} />
+          <Route path="/weather" element={<WeatherPage />} />
         </Routes>
       </Routers>
     </div>

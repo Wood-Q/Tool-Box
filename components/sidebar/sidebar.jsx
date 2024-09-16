@@ -16,6 +16,7 @@ function Sidebar() {
       <Sidelink target="/randomPorts" content="随机端口号"/>
       <Sidelink target="/httpCode" content="HTTP状态码"/>
       <Sidelink target="/UpLow" content="大小写转换"/>
+      <Sidelink target="/weather" content="天气查询"/>
     </div>
   );
 }
