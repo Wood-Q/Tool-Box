@@ -6,5 +6,8 @@
     border-radius: 10px;
     cursor: pointer;
     text-decoration: none; /* 移除下划线 */
-  color: inherit; /* 继承父元素的颜色，或设置你想要的颜色 */
+    color: inherit; /* 继承父元素的颜色，或设置你想要的颜色 */
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }

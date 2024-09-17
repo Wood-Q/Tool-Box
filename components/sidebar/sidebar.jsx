@@ -17,6 +17,7 @@ function Sidebar() {
       <Sidelink target="/httpCode" content="HTTP状态码"/>
       <Sidelink target="/UpLow" content="大小写转换"/>
       <Sidelink target="/weather" content="天气查询"/>
+      <Sidelink target="/cat" content="随机猫猫"/>
     </div>
   );
 }

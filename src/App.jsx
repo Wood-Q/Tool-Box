@@ -9,6 +9,7 @@ import "./App.css"
 import HttpPage from "../pages/httppage/httpPage";
 import UpperLowerPage from "../pages/upperlowerPage/ulpage";
 import WeatherPage from "../pages/weatherpage/weatherPage";
+import CatPage from "../pages/catpage/catPage";
 
 function App() {
   return (
@@ -23,6 +24,7 @@ function App() {
           <Route path="/httpCode" element={<HttpPage />} />
           <Route path="/UpLow" element={<UpperLowerPage />} />
           <Route path="/weather" element={<WeatherPage />} />
+          <Route path="/cat" element={<CatPage />} />
         </Routes>
       </Routers>
     </div>

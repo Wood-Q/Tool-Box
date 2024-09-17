@@ -9,7 +9,7 @@ function Homepage() {
       <Block target="/httpCode" content="http状态码" />
       <Block target="/UpLow" content="大小写转换" />
       <Block target="/weather "content="天气查询" />
-      <Block content="" />
+      <Block target="/cat" content="随机猫猫" />
       <Block content="" />
       <Block content="" />
       <Block content="" />

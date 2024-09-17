@@ -6,12 +6,12 @@ import remarkGfm from "remark-gfm"; // 引入插件
 
 function Block({ target, content }) {
   const markdowncontent = `
-  ### ${content}
+  ## ${content}
   `;
 
   return (
     <NavLink to={target} className="block">
-      <Markdown>{markdowncontent}</Markdown>
+      <Markdown remarkPlugins={[remarkGfm]}>{markdowncontent}</Markdown>
     </NavLink>
   );
 }
