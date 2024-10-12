@@ -10,6 +10,7 @@ import HttpPage from "../pages/httppage/httpPage";
 import UpperLowerPage from "../pages/upperlowerPage/ulpage";
 import WeatherPage from "../pages/weatherpage/weatherPage";
 import CatPage from "../pages/catpage/catPage";
+import TodoPage from "../pages/todopage/todoPage";
 
 function App() {
   return (
@@ -25,6 +26,7 @@ function App() {
           <Route path="/UpLow" element={<UpperLowerPage />} />
           <Route path="/weather" element={<WeatherPage />} />
           <Route path="/cat" element={<CatPage />} />
+          <Route path="/todo" element={<TodoPage />} />
         </Routes>
       </Routers>
     </div>

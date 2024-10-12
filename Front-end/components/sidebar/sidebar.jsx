@@ -18,6 +18,7 @@ function Sidebar() {
       <Sidelink target="/UpLow" content="大小写转换"/>
       <Sidelink target="/weather" content="天气查询"/>
       <Sidelink target="/cat" content="随机猫猫"/>
+      <Sidelink target="/todo" content="待办清单"/>
     </div>
   );
 }
