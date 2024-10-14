@@ -1,5 +1,5 @@
 name: 部署到github pages
-on: push
+on: workflow_dispatch
 
 jobs:
   npm-build:
