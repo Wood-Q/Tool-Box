@@ -61,13 +61,13 @@ exports.updateTodo = async (req, res, next) => {
 
 // 删除 todo
 exports.deleteTodo = async (req, res, next) => {
-  const { id } = req.params;
-  if (!id) {
+  const { task } = req.body;
+  if (!task) {
     return res.status(400).json({ message: "Please provide id" });
   }
   try {
-    const query = `DELETE FROM todo WHERE id = $1 RETURNING *;`;
-    const values = [id];
+    const query = `DELETE FROM todo WHERE task = $1 RETURNING *;`;
+    const values = [task];
     const result = await pool.query(query, values);
     res
       .status(200)
