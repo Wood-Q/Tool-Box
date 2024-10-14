@@ -9,6 +9,8 @@ jobs:
     steps:
       - name: 读取仓库内容
         uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
 
       - name: 设置 Git 配置
         run: |
@@ -32,3 +34,4 @@ jobs:
           folder: Front-end/dist
           token: ${{ secrets.GITHUB_TOKEN }}
           clean: true
+          force: true
