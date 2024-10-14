@@ -5,8 +5,14 @@
     /* 留出Topbar的高度，20px padding + 60px */
     padding: 40px;
     /* 内容区域的内边距 */
-    display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
+}
+
+.container{
+    width: 400px;
+    height:400px;
+    border-radius: 10px;
+    background-color: rgb(219, 229, 236);
 }

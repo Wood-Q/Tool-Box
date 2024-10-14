@@ -3,8 +3,10 @@ const app = express();
 const dotenv = require("dotenv");
 const todoRouter = require("./router/todoRouter");
 const { pool, connectDB } = require("./db");
+const cors = require("cors");
 
 app.use(express.json());
+app.use(cors());
 
 app.use("/api/v1/todos", todoRouter);
 
