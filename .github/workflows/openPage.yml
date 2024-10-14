@@ -10,15 +10,18 @@ jobs:
       - name: 读取仓库内容
         uses: actions/checkout@v4
 
-      - name: 切换到Frontend目录
-        run: cd Front-end
+      - name: 切换到Frontend目录并安装依赖
+        working-directory: Front-end
+        run: |
+          npm install
 
-      - name: 安装依赖
-        run: npm install
+      - name: 构建项目
+        working-directory: Front-end
+        run: |
           npm run build
 
       - name: 部署到github pages
         uses: JamesIves/github-pages-deploy-action@v4
         with:
           branch: gh-pages
-          folder: dist
+          folder: Front-end/dist
