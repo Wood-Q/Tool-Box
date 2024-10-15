@@ -7,7 +7,7 @@ function TodoPage() {
 
   // 获取任务列表的函数
   const fetchTodos = () => {
-    fetch("http://localhost:8080/api/v1/todos/getTodos")
+    fetch("http://localhost:8080/api/v1/todos/getAllTodo")
       .then((res) => res.json())
       .then((data) => setTodos(data))
       .catch((error) => console.error("获取任务列表失败:", error));
@@ -77,6 +77,7 @@ function TodoPage() {
       <div className="container">
         {todos.map((item, index) => (
           <div key={index}>
+            {item.id}
             {item.task}
             <input type="checkbox" />
             {/* <button onClick={()=>handleDelete()}>❌</button> */}
