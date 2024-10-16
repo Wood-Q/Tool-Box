@@ -9,7 +9,10 @@ function TodoPage() {
   const fetchTodos = () => {
     fetch("http://localhost:8080/api/v1/todos/getAllTodo")
       .then((res) => res.json())
-      .then((data) => setTodos(data))
+      .then((data) => {
+        // 假设返回的数据包含每个任务的 `finished` 字段
+        setTodos(data);
+      })
       .catch((error) => console.error("获取任务列表失败:", error));
   };
 
@@ -19,7 +22,6 @@ function TodoPage() {
   }, []);
 
   function handleCreate() {
-    // 发送请求创建新的待办事项
     fetch("http://localhost:8080/api/v1/todos/createTodo", {
       method: "POST",
       headers: {
@@ -31,39 +33,30 @@ function TodoPage() {
         if (!res.ok) {
           throw new Error("网络请求失败");
         }
-        return res.json(); // 转换为 JSON
+        return res.json();
       })
-      .then((data) => {
-        console.log(data);
-        // 请求成功后，重新获取最新的任务列表
-        fetchTodos();
+      .then(() => {
+        fetchTodos(); // 重新获取任务列表
         setTodo(""); // 清空输入框
       })
-      .catch((error) => console.error("请求失败:", error)); // 捕获并显示错误
+      .catch((error) => console.error("请求失败:", error));
   }
 
-  // function handleDelete() {
-  //   // 发送请求删除待办事项
-  //   fetch("http://localhost:8080/api/v1/todos/deleteTodo", {
-  //     method: "DELETE",
-  //     headers: {
-  //       "Content-Type": "application/json",
-  //     },
-  //     body: JSON.stringify({ task: todo }),
-  //   })
-  //     .then((res) => {
-  //       if (!res.ok) {
-  //         throw new Error("网络请求失败");
-  //       }
-  //       return res.json
-  //     })
-  //     .then((data) => {
-  //       console.log(data);
-  //       // 请求成功后，重新获取最新的任务列表
-  //       fetchTodos();
-  //       setTodo(""); // 清空输入框
-  //     })
-  // }
+  // 切换任务的完成状态
+  const handleToggleFinish = (id, task) => {
+    setTodos((prevTodos) =>
+      prevTodos.map((item) =>
+        item.id === id ? { ...item, iscompleted: !item.iscompleted } : item
+      )
+    );
+    fetch("http://localhost:8080/api/v1/todos/updateTodo", {
+      method: "PUT",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({ task: task }),
+    });
+  };
 
   return (
     <div className="contentss">
@@ -71,18 +64,19 @@ function TodoPage() {
         type="text"
         placeholder="请添加待办事项"
         value={todo}
-        onChange={(e) => setTodo(e.target.value)} // 更新输入框内容
+        onChange={(e) => setTodo(e.target.value)}
       />
-      <button onClick={() => handleCreate()}>添加事项</button>
+      <button onClick={handleCreate}>添加事项</button>
       <div className="container">
-        {todos.map((item, index) => (
-          <div key={index}>
-            {item.id}
-            {item.task}
-            <input type="checkbox" />
-            {/* <button onClick={()=>handleDelete()}>❌</button> */}
+        {todos.map((item) => (
+          <div key={item.id} className={item.iscompleted ? "finish" : ""}>
+            <span>{item.task}</span>
+            <input
+              type="checkbox"
+              checked={item.iscompleted || false}
+              onChange={() => handleToggleFinish(item.id, item.task)}
+            />
           </div>
-          // 显示已添加的任务
         ))}
       </div>
     </div>

@@ -20,3 +20,7 @@
     margin: 20px;
     padding: 20px;
 }
+
+.finish{
+    text-decoration: line-through;
+}

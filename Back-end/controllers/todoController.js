@@ -38,16 +38,15 @@ exports.getAllTodo = async (req, res, next) => {
 
 // 更新 todo，将 iscompleted 改为 true
 exports.updateTodo = async (req, res, next) => {
-  const { id } = req.params;
-  const { iscompleted } = req.body;
-  if (!id || iscompleted === undefined) {
+  const { task } = req.body;
+  if (task === undefined) {
     return res
       .status(400)
       .json({ message: "Please provide id and iscompleted" });
   }
   try {
-    const query = `UPDATE todo SET iscompleted = $1 WHERE id = $2 RETURNING *;`;
-    const values = [iscompleted, id];
+    const query = `UPDATE todo SET iscompleted = NOT iscompleted WHERE task=$1 RETURNING *;`;
+    const values = [task];
     const result = await pool.query(query, values);
     res
       .status(200)
