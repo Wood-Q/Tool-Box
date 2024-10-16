@@ -1,0 +1,36 @@
+version: "3"
+services:
+  frontend:
+    build:
+      context: ./Front-end
+    ports:
+      - "3000:5173" # 将 Vite 服务器的端口 5173 映射到主机的 3000 端口
+    environment:
+      - CHOKIDAR_USEPOLLING=true # 在 Docker 中启用轮询模式，确保文件监控正常
+    volumes:
+      - ./Front-end:/app # 挂载前端代码以支持热更新
+    command: ["npm", "run", "dev", "--", "--host"] # 确保 Vite 监听 0.0.0.0
+
+  backend:
+    build:
+      context: ./Back-end
+    ports:
+      - "8080:8080"
+    environment:
+      - DATABASE_URL=postgres://postgres:1234567@db:5432/postgres
+    depends_on:
+      - db
+    restart: always # 确保容器重启
+
+  db:
+    image: postgres:13
+    environment:
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=1234567
+      - POSTGRES_DB=postgres
+    volumes:
+      - postgre_data:/var/lib/postgresql/data
+    restart: always # 确保数据库容器重启
+
+volumes:
+  postgre_data:
